@@ -5,22 +5,35 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'sm': '500px',
+      'md': [
+        {'min': '668px', 'max': '767px'},
+        {'min': '868px'}
+      ],
+      'lg': '1100px',
+      'xl': '1400px',
+    },
     extend: {
+      gridTemplateColumns: {
+        'custom': '1fr 1.5fr 1fr 1fr 1fr 0.5fr',
+      },
       fontFamily: {
-        sans: ['Outfit'], // Custom font family definition
+        sans: ['Outfit'], 
       },
       fontSize: {
-        'responsive': ['4.5vw', '22px'], // Custom responsive font sizes
+        'responsive': ['4.5vw', '22px'], 
       },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' }, // Custom keyframes animation
-          '100%': { opacity: '1' },
-        },
+      keyframes:{
+        fadeInimg:{
+          '0':{opacity:'0'},
+          '100':{opacity:'100'}
+        }
       },
       animation: {
-        fadeIn: 'fadeIn 3s ease-in-out', // Add this line
+        fadeIn: 'fadeIn 1.25s ease-in-out', 
       },
+    
     },
   },
   plugins: [],

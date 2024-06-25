@@ -1,16 +1,51 @@
-import { useState } from 'react';
-export default Accordian=()=>{
-  const [activeIndex,setactiveIndex] = useState(0);
-    return (<div>
-        <Panel title="Book" isActive={activeIndex===0} onshow={()=>setactiveIndex(0)}>This is the book</Panel>
-        <Panel title="note" isActive={activeIndex===1} onshow={()=>setactiveIndex(1)}>This is the test book</Panel>
-    </div>)
+import { createContext, useEffect, useState } from "react";
+import { food_list } from "../assets/assets";
+
+export const StoreContext = createContext(null)
+
+const StoreContextProvider = ( props ) =>{
+
+  
+
+  const [cartItems,setCartItems] = useState({})
+  
+  // for(let item in cartItems){
+  //   console.log(typeof(item))
+  //   console.log(item,"item")
+  //   console.log(cartItems[item],'check')
+  // }
+
+  const addtoCart = (itemId) =>{
+    if(!cartItems[itemId]){
+      setCartItems((prev)=>({...prev,[itemId]:1}))
+    }
+    else {
+      setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
+    }
+  }
+
+  const removeFromCart = (itemId)=>{
+    setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+  }
+const getTotalCartAmount = () =>{
+    let totalAmount = 0;
+    for(const item in cartItems){
+      if(cartItems[item]>0){
+        let itemInfo = food_list.find((product)=>product._id===item)
+        totalAmount += itemInfo.price*cartItems[item] 
+         {/*  cartItems[item]--> this is returning the quantity */}
+      }
+    }
+    return totalAmount;
 }
 
-function Panel({title,children,isActive,onshow}){
-return(<div>
-    <h1>{title}</h1>
-   
-  {isActive?( <p>{children}</p>):(<button onclick={onshow}>On show</button>)}
-</div>)
+
+  const contextValue = {
+    food_list,cartItems,setCartItems,addtoCart,removeFromCart,getTotalCartAmount
+  }
+  return (
+    <StoreContext.Provider value={contextValue}>{props.children} </StoreContext.Provider>
+  )
 }
+
+export default StoreContextProvider

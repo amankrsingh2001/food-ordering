@@ -4,10 +4,8 @@ import ExploreMenuListItem from './ExploreMenuListItem'
 
 const ExploreMenu = ({category,setCategory}) => {
   
-   
-
   return (
-    <div className='flex flex-col gap-[20px]' id='exploremenu'>
+    <div className='flex flex-col gap-[20px]' id='explore-menu'>
       <h1 className='text-[#262626] font-bold text-5xl'>Explore our menu</h1>
         <p className='max-w-[60%] text-[#808080]'>Choose from a diverse menu featuring a delectable array of dishes.Our mission is to satisfy your craving and elevate your dining ,One delicious meal at a time.</p>
         <div className='flex justify-between items-center gap-[30px] text-center mx-0 my-[20px] overflow-x-scroll '>
