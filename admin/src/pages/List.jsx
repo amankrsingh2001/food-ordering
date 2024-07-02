@@ -42,7 +42,7 @@ const List = ({url}) => {
           list.map((item,index)=>{
             return (
               <div key={index} className="grid grid-cols-[0.5fr_2fr_1fr_1fr_0.5fr] items-center gap-[10px] py-[12px] px-[15px] border-[1px] border-[solid] border-[#cacaca] text-[13px]">
-                <img className='w-[screen]' src={`${url}/images/`+item.image}/>
+                <img className='w-[screen]' src={item.image}/>
                 <p>{item.name}</p>
                 <p>{item.category}</p>
                 <p>${item.price}</p>
