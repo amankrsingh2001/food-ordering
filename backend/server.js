@@ -14,7 +14,7 @@ dotenv.config({
 // app config
 const app = express()
 
-const port = 4000
+const port = process.env.PORT || 4000
 
 // middleware
 app.use(express.json()) // Whenever we get the req from frontend to backend that will be parsed into json
@@ -35,6 +35,6 @@ app.get('/',(req,res)=>{
 })
 
 app.listen(port,()=>{
-    console.log(`App is listining on http://localhost:${port}`)
+    console.log(`App is listining on ${port}`)
 })
 
