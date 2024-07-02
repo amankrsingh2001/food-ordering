@@ -3,8 +3,8 @@ import { assets } from '../../assets/assets'
 
 const Footer = () => {
   return (
-    <div className='text-[#d9d9d9] bg-[#323232] flex flex-col items-center gap-[30px] py-5 px-[8vw] pt-20 mt-24' id='footer'>
-        <div className='w-full grid grid-cols-[2fr_1fr_1fr] gap-[80px]'>
+    <div className='text-[#d9d9d9] bg-[#323232] flex flex-col items-center gap-[30px] py-5 px-[8vw] pt-20 mt-24 ' id='footer'>
+        <div className='w-full grid md:grid-cols-[2fr_1fr_1fr] grid-cols-[1fr] md:grid-rows-[1fr] sm:grid-rows-[1fr_1fr_1fr] gap-[80px]'>
             <div className='flex flex-col items-start gap-[20px] '>
                 <img src={assets.logo}/>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa temporibus, voluptatum distinctio provident soluta repudiandae. At explicabo natus incidunt odit quibusdam esse quam accusamus reprehenderit. Tempore quasi commodi odit neque!</p>

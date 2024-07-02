@@ -5,15 +5,6 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    screens: {
-      'sm': '500px',
-      'md': [
-        {'min': '668px', 'max': '767px'},
-        {'min': '868px'}
-      ],
-      'lg': '1100px',
-      'xl': '1400px',
-    },
     extend: {
       gridTemplateColumns: {
         'custom': '1fr 1.5fr 1fr 1fr 1fr 0.5fr',
